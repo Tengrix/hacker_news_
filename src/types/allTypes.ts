@@ -1,6 +1,7 @@
 export type newsAppStateType = {
     news: apiType[];
     comments: commentsApi[];
+    kids:commentsApi[]
 }
 
 export type apiType = {
@@ -21,4 +22,5 @@ export type commentsApi = {
     text: string;
     time: number;
     type: string;
+    kids?:number[];
 }

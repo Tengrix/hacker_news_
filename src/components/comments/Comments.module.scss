@@ -1,0 +1,13 @@
+@import "src/common/styles/varibles";
+@import "src/common/styles/mixin";
+.mainBlock{
+  border: 1px solid black;
+  padding: 15px;
+  .infoBlock{
+    @include display(flex-start,left);
+    color: gray;
+  }
+  .commentsBlock{
+    @include display(flex-start,left)
+  }
+}

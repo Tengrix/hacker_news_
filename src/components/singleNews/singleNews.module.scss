@@ -1,0 +1,12 @@
+@import "src/common/styles/varibles";
+@import "src/common/styles/mixin";
+
+.news {
+  span {
+    font-size: $mainFontSize;
+    color: blueviolet;
+  }
+  border: 1px solid #282c34;
+  background-color: bisque;
+  font-size: $fontSize;
+}

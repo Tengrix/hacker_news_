@@ -1,9 +1,11 @@
 import {combineReducers} from "redux";
 import thunkMiddleware from 'redux-thunk'
-import {appReducer} from "./appReducer";
+import {stateReducer} from "./stateReducer";
 import {configureStore} from "@reduxjs/toolkit";
+import {appReducer} from "./appReducer";
 
 const rootReducer = combineReducers({
+    statePage:stateReducer,
     appPage:appReducer
 })
 export const store = configureStore({

@@ -6,7 +6,7 @@ export const instance = axios.create({
 })
 
 export const getNews = () => {
-    return instance.get(`newstories.json?print=pretty`)
+    return instance.get(`topstories.json?print=pretty`)
 }
 export const getItem = (id: number) => {
     return instance.get<apiType[]>(`item/${id}.json?print=pretty`)

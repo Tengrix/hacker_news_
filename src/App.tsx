@@ -1,23 +1,23 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import {useDispatch, useSelector} from "react-redux";
-import {getServerNewsId} from "./redux-store/appReducer";
-import {News} from "./components/News";
+import {getServerNewsId} from "./redux-store/stateReducer";
+import {News} from "./components/news/News";
 import {Link, Route, Switch} from "react-router-dom";
 import {AppRootStateType} from "./redux-store/store";
 import {apiType} from "./types/allTypes";
-import {SingleNews} from "./components/SingleNews";
+import {SingleNews} from "./components/singleNews/SingleNews";
 
 function App() {
     const dispatch = useDispatch()
-    const state = useSelector<AppRootStateType, apiType[]>(state => state.appPage.news)
+    const state = useSelector<AppRootStateType, apiType[]>(state => state.statePage.news)
 
     useEffect(() => {
         dispatch(getServerNewsId())
-        const interval = setInterval(() => {
-            dispatch(getServerNewsId())
-        }, 60000)
-        return () => clearInterval(interval)
+        // const interval = setInterval(() => {
+        //     dispatch(getServerNewsId())
+        // }, 60000)
+        // return () => clearInterval(interval)
     }, [])
     const getHours = (time: number) => {
         const date = new Date(time * 1000);
@@ -43,6 +43,7 @@ function App() {
                 <Route path={'/news/:newsId'}>
                     <SingleNews
                         news={state}
+                        getHours={getHours}
                     />
                 </Route>
             </Switch>

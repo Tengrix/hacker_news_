@@ -1,0 +1,19 @@
+@import './src/common/styles/varibles';
+
+.mainBlock{
+  background-color: bisque;
+  padding: 8px 0;
+  border:1px solid black;
+  .news{
+    font-size: $mainFontSize;
+    a:link{
+      text-decoration: none;
+    }
+    &:hover{
+      background-color: #61dafb
+    }
+  }
+  .description{
+    font-size: $fontSize;
+  }
+}
